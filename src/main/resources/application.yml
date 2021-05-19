@@ -1,0 +1,8 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store:  classpath:certs/cert.p12
+    key-store-password: password
+    keyStoreType: PKCS12
+    keyAlias: webappsecurity

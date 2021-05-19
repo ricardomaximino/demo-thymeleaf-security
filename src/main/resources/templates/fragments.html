@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:fragment="htmlHeader">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link th:href="@{../css/bootstrap.min.css}" th:rel="stylesheet">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script th:src="@{../js/bootstrap.min.js}"></script>
+</head>
+<body>
+  <nav th:fragment="navBar" class="navbar navbar">
+    <ol class="breadcrumb">
+      <li th:if="${helloPage}" class="active">Home</li>
+      <li th:if="${indexPage}"><a th:href="@{${indexPage}?:'/index'}">Home</a></li>
+      <li th:if="${indexPage}" class="active">Hello</li>
+      <li th:if="${helloPage}"><a th:href="@{${helloPage}?:'/hello'}">Hello</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li style="padding-right:10px; padding-botton:10px">
+          <form th:action="@{/logout}" method="post">
+            <button sec:authorize="isAuthenticated()" type="submit">logout</button>
+          </form>
+        </li>
+      </ul>
+    </ol>
+  </nav>
+</body>
+</html>
