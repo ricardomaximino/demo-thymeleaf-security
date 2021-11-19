@@ -13,7 +13,7 @@
 
             <h1>Hello <span th:text="${name}?: 'World!!'">List of Seed Starters</span></h1>
 
-            <p>Click <a th:href="@{${indexPage}?:'/index'}">here</a> to go the the HOME page.</p>
+            <p>Click <a th:href="@{${indexPage}?:'/index'}">here</a> to go to the HOME page.</p>
 
             <h3 th:text="${#dates.format(datetime, 'dd MMM yyyy HH:mm:ss')}"></h3>
         </div>

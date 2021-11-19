@@ -13,7 +13,7 @@
 
             <h1>Welcome to the Home page <span th:text="${name}?:''">Page Title</span></h1>
 
-            <p>Click <a th:href="@{${helloPage}?:'/hello'}">here</a> to go the the Hello page.</p>
+            <p>Click <a th:href="@{${helloPage}?:'/hello'}">here</a> to go to the Hello page.</p>
 
             <h3 th:text="${#dates.format(datetime, 'dd MMM yyyy HH:mm:ss')}"></h3>
         </div>
