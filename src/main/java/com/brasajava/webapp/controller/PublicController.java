@@ -23,4 +23,10 @@ public class PublicController {
         model.addAttribute("indexPage","/public/welcome");
         return "hello";
     }
+
+    @GetMapping("/portifolio")
+    public String portifolio(Model model){
+        model.addAttribute("brand","Ricardo Maximino");
+        return "portifolio";
+    }
 }
