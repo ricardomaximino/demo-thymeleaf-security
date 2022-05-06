@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -21,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/","/hello", "/index","/public/**").permitAll()
-                .antMatchers("/js/**", "/css/**", "/image/**").permitAll()
+                .antMatchers("/webjars/**", "/js/**", "/css/**", "/image/**").permitAll()
                 .antMatchers( "/admin/**").hasRole("ADMIN")
                 .antMatchers( "/user/**").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()

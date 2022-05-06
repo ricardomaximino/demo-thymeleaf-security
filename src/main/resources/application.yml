@@ -6,3 +6,4 @@ server:
     key-store-password: password
     keyStoreType: PKCS12
     keyAlias: webappsecurity
+    
