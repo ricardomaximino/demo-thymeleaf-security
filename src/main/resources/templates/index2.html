@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <div th:replace="fragments::htmlHeader"/>
+    <title>Home</title>
+</head>
+<body>
+<div class="fluid-container">
+    <nav th:replace="fragments::navBar" class="navbar navbar"/>
+    <div class="row" style="padding-top:15%" >
+        <div class="text-center">
+
+            <h1>Welcome to the Home page <span th:text="${name}?:''">Page Title</span></h1>
+
+            <p>Click <a th:href="@{${helloPage}?:'/hello'}">here</a> to go to the Hello page.</p>
+
+            <h3 th:text="${#dates.format(datetime, 'dd MMM yyyy HH:mm:ss')}"></h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>
