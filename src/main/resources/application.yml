@@ -2,10 +2,13 @@ server:
   port: 8443
   ssl:
     enabled: true
-    key-store:  classpath:certs/cert.p12
-    key-store-password: password
-    keyStoreType: PKCS12
-    keyAlias: webappsecurity
+    Key-store: classpath:certs/brasatech-server.p12
+    key-store-password: changeit
+    key-store-type: PKCS12
+    Key-alias: brasatech-server
+    trust-store: classpath:certs/truststore.p12
+    trust-store-password: changeit
+    trust-store-type: PKCS12
 
 
 spring:
